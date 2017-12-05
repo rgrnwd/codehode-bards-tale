@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Brain/WordDictionary.cs">
+    <Files>
+      <File FileName="BardsTale.Tests/Brain/WordProcessorTest.cs" Line="30" Column="43" />
+      <File FileName="BardsTale/Brain/WordProcessor.cs" Line="16" Column="35" />
+      <File FileName="BardsTale/Brain/WordDictionary.cs" Line="32" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.BardsTale PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,1 +1,2 @@
-# codehode-bards-tale
+# bards-tale
+A story telling application
