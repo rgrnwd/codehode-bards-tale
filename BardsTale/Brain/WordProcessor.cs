@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using BardsTale.Model;
 
 namespace BardsTale.Brain
@@ -12,9 +13,21 @@ namespace BardsTale.Brain
             dictionary = new WordDictionary(projectDirectory);
         }
 
-        public Word Process(String text){
-            return dictionary.Lookup(text);
+        public Word Process(String word){
+            return dictionary.Lookup(word);
         }
 
+        public List<Word> ProcessSentence(String sentence)
+        {
+            List<Word> words = new List<Word>();
+            string[] particles = sentence.Split(' ', ',');
+
+            foreach (var particle in particles)
+            {
+                words.Add(dictionary.Lookup(particle));
+            }
+
+            return words;
+        }
     }
 }

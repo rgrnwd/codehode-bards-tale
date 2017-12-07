@@ -318,7 +318,6 @@ bear
 beard
 beast
 beat
-beautiful
 beauty
 beaver
 bed
@@ -3431,6 +3430,7 @@ runaway
 runner
 rush
 rutabaga
+whatever
 ruth
 ry
 sabre
