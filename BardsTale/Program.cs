@@ -1,5 +1,6 @@
 ﻿using System;
 using BardsTale.Brain;
+using BardsTale.Model.Exceptions;
 
 namespace BardsTale
 {
@@ -12,11 +13,17 @@ namespace BardsTale
             Console.WriteLine("(you can enter up to five words and I will do my best to tell you a tale relevant to those words)");
             string theme = Console.ReadLine();
             var words = new WordProcessor(GetMainProjectDirectory()).ProcessSentence(theme);
-            Console.WriteLine("Just to clarify, I think you want me to tell you a story about...");
+            Console.WriteLine("OK let me think...");
 
-            foreach (var word in words)
+            try
             {
-                Console.Write(string.Format("{0} ({1}) ",word.Value, word.Type));
+                MeaningParser meaningParser = new MeaningParser(words);
+                string subjectOfTheStory = meaningParser.FindSubjectOfTheStory();
+                Console.WriteLine("Well, I think I'm going to tell you a story about " + subjectOfTheStory);
+            }
+            catch (InvalidInputException ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
