@@ -361,8 +361,6 @@ bicycle
 bid
 bidet
 bifocals
-big
-big-rig
 bijou
 bike
 bikini

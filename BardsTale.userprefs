@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Resources/Nouns.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Brain/Dictionary.cs">
     <Files>
-      <File FileName="BardsTale.Tests/Brain/WordProcessorTest.cs" Line="30" Column="43" />
-      <File FileName="BardsTale/Brain/WordProcessor.cs" Line="11" Column="53" />
-      <File FileName="BardsTale/Program.cs" Line="29" Column="35" />
-      <File FileName="BardsTale.Tests/TestHelper.cs" Line="8" Column="8" />
-      <File FileName="BardsTale/Resources/Nouns.txt" Line="321" Column="7" />
+      <File FileName="BardsTale/Brain/MeaningParser.cs" Line="18" Column="10" />
+      <File FileName="BardsTale/Brain/Dictionary.cs" Line="27" Column="82" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

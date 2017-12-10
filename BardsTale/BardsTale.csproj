@@ -10,5 +10,10 @@
     <Folder Include="Brain\" />
     <Folder Include="Model\" />
     <Folder Include="Model\Exceptions\" />
+    <Folder Include="Resources\Words\" />
+    <Folder Include="Resources\Sentences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Brain\SentenceGenerator.cs" />
   </ItemGroup>
 </Project>

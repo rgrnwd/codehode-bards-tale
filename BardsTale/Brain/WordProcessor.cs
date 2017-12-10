@@ -6,11 +6,11 @@ namespace BardsTale.Brain
 {
     public class WordProcessor
     {
-        private WordDictionary dictionary;
+        private Dictionary dictionary;
 
         public WordProcessor(String projectDirectory)
         {
-            dictionary = new WordDictionary(projectDirectory);
+            dictionary = new Dictionary(projectDirectory);
         }
 
         public Word Process(String word){
@@ -20,7 +20,7 @@ namespace BardsTale.Brain
         public List<Word> ProcessSentence(String sentence)
         {
             List<Word> words = new List<Word>();
-            string[] particles = sentence.Split(' ', ',');
+            string[] particles = sentence.Split(' ', ',', StringSplitOptions.RemoveEmptyEntries);
 
             foreach (var particle in particles)
             {
