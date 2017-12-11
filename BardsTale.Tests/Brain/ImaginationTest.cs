@@ -28,7 +28,7 @@ namespace BardsTale.Tests.Brain
                     names.Add(newName);
             }
 
-            Assert.True(names.Count > 5);
+            Assert.True(names.Count > 3);
         }
     }
 }

@@ -24,7 +24,27 @@ namespace BardsTale.Tests.Brain
         {
             var result = meaningParser.WhatDoTheyWantAStoryAbout(new List<Word>() { new Word("Zebra", WordType.Animal) });
 
-            Assert.Contains("Zebra", result.MainCharacter.Type);
+            Assert.Equal("Zebra", result.MainCharacter.Type);
+        }
+
+        [Fact]
+        public void WhatDoTheyWantAStoryAbout_WordsContainsAnimalAndAdjective_ReturnsContextWithCharacterInformation()
+        {
+            var words = new List<Word>() { new Word("Zebra", WordType.Animal), new Word("fat", WordType.Adjective) };
+            var result = meaningParser.WhatDoTheyWantAStoryAbout(words);
+
+            Assert.Equal("Zebra", result.MainCharacter.Type);
+            Assert.Equal("fat", result.MainCharacter.Adjective);
+        }
+
+        [Fact]
+        public void WhatDoTheyWantAStoryAbout_WordsContainsAnimalAndFood_ReturnsContextWithCharacterInformation()
+        {
+            var words = new List<Word>() { new Word("Zebra", WordType.Animal), new Word("banana", WordType.Food) };
+            var result = meaningParser.WhatDoTheyWantAStoryAbout(words);
+
+            Assert.Equal("Zebra", result.MainCharacter.Type);
+            Assert.Equal("banana", result.MainCharacter.Likes);
         }
     }
 }

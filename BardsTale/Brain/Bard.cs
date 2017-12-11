@@ -15,12 +15,13 @@ namespace BardsTale.Brain
             imagination = new Imagination();
         }
 
-        public StoryContext TellStory(List<Word> keywords){
+        public StoryContext TellStory(List<Word> keywords)
+        {
             meaningParser = new MeaningParser();
 
             story = meaningParser.WhatDoTheyWantAStoryAbout(keywords);
             story.MainCharacter.Name = imagination.MakeUpSomeRandomName();
-            story.Title = string.Format("A {0} {1} named {2}", story.MainCharacter.Adjective, story.MainCharacter.Type, story.MainCharacter.Name);
+            story.Title = GetStoryTitle();
             story.Content.Add("this is the first line of content");
             story.Content.Add("this is the second line of content");
             story.Content.Add("this is the third line of content");
@@ -28,6 +29,16 @@ namespace BardsTale.Brain
             story.Content.Add("this is the fifth line of content");
             story.Content.Add("this is the sixth line of content");
             return story;
+        }
+
+        private string GetStoryTitle()
+        {
+            string title = string.Format("A {0} {1} named {2}", story.MainCharacter.Adjective, story.MainCharacter.Type, story.MainCharacter.Name);
+
+            if (!string.IsNullOrEmpty(story.MainCharacter.Likes))
+                title += " who likes " + story.MainCharacter.Likes;
+            
+            return title;
         }
     }
 }
