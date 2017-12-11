@@ -6,18 +6,18 @@ namespace BardsTale.Brain
 {
     public class WordProcessor
     {
-        private Dictionary dictionary;
+        private Memory dictionary;
 
         public WordProcessor(String projectDirectory)
         {
-            dictionary = new Dictionary(projectDirectory);
+            dictionary = new Memory(projectDirectory);
         }
 
         public Word Process(String word){
             return dictionary.Lookup(word);
         }
 
-        public List<Word> ProcessSentence(String sentence)
+        public List<Word> GetWordsFromSentence(String sentence)
         {
             List<Word> words = new List<Word>();
             string[] particles = sentence.Split(' ', ',', StringSplitOptions.RemoveEmptyEntries);

@@ -70,7 +70,7 @@ namespace BardsTale.Tests.Brain
 
         [Fact]
         public void ProcessSentence_EmptyString_ReturnAnEmptyList(){
-            var result = wordProcessor.ProcessSentence("");
+            var result = wordProcessor.GetWordsFromSentence("");
 
             Assert.Equal(0, result.Count);
         }
@@ -78,7 +78,7 @@ namespace BardsTale.Tests.Brain
         [Fact]
         public void ProcessSentence_MultipleSpaces_ReturnAnEmptyList()
         {
-            var result = wordProcessor.ProcessSentence("   ");
+            var result = wordProcessor.GetWordsFromSentence("   ");
 
             Assert.Equal(0, result.Count);
         }
@@ -86,7 +86,7 @@ namespace BardsTale.Tests.Brain
         [Fact]
         public void ProcessSentence_OneWord_ReturnListWithWordAndType()
         {
-            var result = wordProcessor.ProcessSentence("elephant");
+            var result = wordProcessor.GetWordsFromSentence("elephant");
             Assert.Equal(1, result.Count);
             Assert.Equal(WordType.Animal, result[0].Type);
         }
@@ -94,7 +94,7 @@ namespace BardsTale.Tests.Brain
         [Fact]
         public void ProcessSentence_TwoWords_ReturnListWithTwoWords()
         {
-            var result = wordProcessor.ProcessSentence("big elephant");
+            var result = wordProcessor.GetWordsFromSentence("big elephant");
             Assert.Equal(2, result.Count);
             Assert.Equal(WordType.Adjective, result[0].Type);
             Assert.Equal(WordType.Animal, result[1].Type);

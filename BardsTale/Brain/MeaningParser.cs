@@ -7,22 +7,19 @@ namespace BardsTale.Brain
 {
     public class MeaningParser
     {
-        private List<Word> words;
-        private Imagination imagination;
+        public StoryContext WhatDoTheyWantAStoryAbout(List<Word> words){
 
-        public MeaningParser(List<Word> words)
-        {
-            imagination = new Imagination();
-            this.words = words;
-        }
+            if (words.Count == 0) throw new InvalidInputException();
 
-        public string FindSubjectOfTheStory(){
+            StoryContext storyContext = new StoryContext();
+
             var animals = words.FindAll(w => w.Type == WordType.Animal);
 
-            if (animals.Count > 0)
-                return String.Format("A {0} named {1}", animals[0].Value, imagination.MakeUpSomeRandomName());
-            
-            throw new InvalidInputException();
+            if (animals.Count > 0){
+                storyContext.MainCharacter = new Character(animals[0].Value);
+            }
+
+            return storyContext;
         }
     }
 }

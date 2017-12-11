@@ -7,7 +7,7 @@ using BardsTale.Model.Exceptions;
 
 namespace BardsTale.Brain
 {
-    public class Dictionary
+    public class Memory
     {
         private const string VERBS_DICTIONARY = "Verbs.txt";
         private const string NOUNS_DICTIONARY = "Nouns.txt";
@@ -22,7 +22,7 @@ namespace BardsTale.Brain
         private Lazy<List<String>> nouns;
         private Lazy<List<String>> adjectives;
 
-        public Dictionary(string projectDirectory)
+        public Memory(string projectDirectory)
         {
             var resourcesFolder = Path.Combine(projectDirectory, "Resources/Words");
             animals = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(resourcesFolder, ANIMALS_DICTIONARY)));

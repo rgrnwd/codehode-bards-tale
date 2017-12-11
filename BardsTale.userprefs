@@ -1,10 +1,18 @@
 ﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Model/Character.cs">
     <Files>
-      <File FileName="BardsTale/Brain/MeaningParser.cs" Line="17" Column="10" />
-      <File FileName="BardsTale.Tests/Brain/MeaningParserTest.cs" Line="27" Column="42" />
-      <File FileName="BardsTale/Brain/Imagination.cs" Line="17" Column="10" />
-      <File FileName="BardsTale/Program.cs" Line="20" Column="14" />
+      <File FileName="BardsTale/Brain/MeaningParser.cs" Line="10" Column="1" />
+      <File FileName="BardsTale.Tests/Brain/MeaningParserTest.cs" Line="25" Column="63" />
+      <File FileName="BardsTale/Brain/Imagination.cs" Line="19" Column="23" />
+      <File FileName="BardsTale/Model/StoryContext.cs" Line="6" Column="38" />
+      <File FileName="BardsTale/Brain/WordProcessor.cs" Line="20" Column="39" />
+      <File FileName="BardsTale/Brain/Bard.cs" Line="23" Column="105" />
+      <File FileName="BardsTale.Tests/Brain/WordProcessorTest.cs" Line="73" Column="40" />
+      <File FileName="BardsTale/Program.cs" Line="21" Column="13" />
+      <File FileName="BardsTale/Brain/Memory.cs" Line="51" Column="48" />
+      <File FileName="BardsTale.Tests/Brain/BardTest.cs" Line="21" Column="10" />
+      <File FileName="BardsTale.Tests/Brain/ImaginationTest.cs" Line="32" Column="10" />
+      <File FileName="BardsTale/Model/Character.cs" Line="6" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

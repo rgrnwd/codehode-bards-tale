@@ -11,20 +11,20 @@ namespace BardsTale.Tests.Brain
 {
     public class MeaningParserTest
     {
+        MeaningParser meaningParser = new MeaningParser();
+
         [Fact]
-        public void FindSubjectOfTheStory_EmptyListOfWords_ThrowError()
+        public void WhatDoTheyWantAStoryAbout_EmptyListOfWords_ThrowError()
         {
-            MeaningParser meaningParser = new MeaningParser(new List<Word>());
-            Exception ex = Assert.Throws<InvalidInputException>(() =>  meaningParser.FindSubjectOfTheStory());
+            Exception ex = Assert.Throws<InvalidInputException>(() =>  meaningParser.WhatDoTheyWantAStoryAbout(new List<Word>()));
         }
 
         [Fact]
-        public void FindSubjectOfTheStory_WordsContainsAnimal_ReturnsAnimalWithRandomName()
+        public void WhatDoTheyWantAStoryAbout_WordsContainsAnimal_ReturnsContextWithCharacter()
         {
-            MeaningParser meaningParser = new MeaningParser(new List<Word>() { new Word("Zebra", WordType.Animal) });
-            var result = meaningParser.FindSubjectOfTheStory();
+            var result = meaningParser.WhatDoTheyWantAStoryAbout(new List<Word>() { new Word("Zebra", WordType.Animal) });
 
-            Assert.Contains("A Zebra named ", result);
+            Assert.Contains("Zebra", result.MainCharacter.Type);
         }
     }
 }
