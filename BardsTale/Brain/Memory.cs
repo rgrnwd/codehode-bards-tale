@@ -15,18 +15,21 @@ namespace BardsTale.Brain
 
         private const string ANIMALS_DICTIONARY = "Animals.txt";
         private const string FOODS_DICTIONARY = "Foods.txt";
+        private const string NAMES_DICTIONARY = "Names.txt";
 
         private Lazy<List<String>> animals;
         private Lazy<List<String>> foods;
         private Lazy<List<String>> verbs;
         private Lazy<List<String>> nouns;
         private Lazy<List<String>> adjectives;
+        private Lazy<List<String>> names;
 
         public Lazy<List<string>> Adjectives { get => adjectives; set => adjectives = value; }
         public Lazy<List<string>> Animals { get => animals; set => animals = value; }
         public Lazy<List<string>> Foods { get => foods; set => foods = value; }
         public Lazy<List<string>> Verbs { get => verbs; set => verbs = value; }
         public Lazy<List<string>> Nouns { get => nouns; set => nouns = value; }
+        public Lazy<List<string>> Names { get => names; set => names = value; }
 
         public Memory(string projectDirectory)
         {
@@ -36,6 +39,7 @@ namespace BardsTale.Brain
             Adjectives = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(resourcesFolder, ADJECTIVES_DICTIONARY)));
             Verbs = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(resourcesFolder, VERBS_DICTIONARY)));
             Nouns = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(resourcesFolder, NOUNS_DICTIONARY)));
+            Names = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(resourcesFolder, NAMES_DICTIONARY)));
         }
 
         public Word Lookup(String word)
@@ -50,6 +54,8 @@ namespace BardsTale.Brain
                 return new Word(word, WordType.Noun);
             else if (Adjectives.Value.Any(s => s.Equals(word, StringComparison.OrdinalIgnoreCase)))
                 return new Word(word, WordType.Adjective);
+            else if (Names.Value.Any(s => s.Equals(word, StringComparison.OrdinalIgnoreCase)))
+                return new Word(word, WordType.Name);
 
             return new Word(word, WordType.Unknown);
         }

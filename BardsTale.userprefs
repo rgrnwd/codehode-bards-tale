@@ -1,16 +1,21 @@
 ﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Model/Character.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Brain/Memory.cs">
     <Files>
-      <File FileName="BardsTale/Brain/Imagination.cs" Line="32" Column="39" />
-      <File FileName="BardsTale/Brain/Bard.cs" Line="25" Column="59" />
+      <File FileName="BardsTale/Brain/Imagination.cs" Line="39" Column="41" />
+      <File FileName="BardsTale/Brain/Bard.cs" Line="25" Column="60" />
       <File FileName="BardsTale/Brain/WordProcessor.cs" Line="9" Column="30" />
       <File FileName="BardsTale/Model/Character.cs" Line="16" Column="90" />
+      <File FileName="BardsTale/Resources/Words/Names.txt" Line="23" Column="7" />
+      <File FileName="BardsTale/Resources/Words/Foods.txt" Line="1" Column="1" />
+      <File FileName="BardsTale/Brain/Memory.cs" Line="18" Column="55" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.BardsTale PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/rgrnwd/Projects/codehode-bards-tale/BardsTale/Brain/Imagination.cs" relfile="BardsTale/Brain/Imagination.cs" line="39" column="41" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

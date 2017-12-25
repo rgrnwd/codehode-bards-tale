@@ -46,6 +46,13 @@ namespace BardsTale.Brain
                 words.Remove(foods[0]);
             }
 
+            var names = words.FindAll(w => w.Type == WordType.Name);
+
+            if (names.Count > 0)
+            {
+                character.Name = names[0].Value;
+                words.Remove(names[0]);
+            }
             return character;
         }
     }

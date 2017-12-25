@@ -19,11 +19,17 @@ namespace BardsTale.Brain
                                  context.MainCharacter.Adjective, 
                                  context.MainCharacter.Type, 
                                  context.MainCharacter.Name,
-                                 context.MainCharacter.FavouriteFood ?? context.MainCharacter.FavouriteThing);
+                                 WhatDidHeLike(context.MainCharacter));
+        }
+
+        public string GimmeAGoodEnding(StoryContext context){
+            return string.Format("Um, yeah. And {0} lived happily ever after!",
+                                 context.MainCharacter.Name);
         }
 
         public Character FillInTheMissingDetails(Character mainCharacter){
-            mainCharacter.Name = MakeUpSomeRandomName();
+            if (string.IsNullOrEmpty(mainCharacter.Name))
+                mainCharacter.Name = MakeUpSomeRandomName();
 
             if (string.IsNullOrEmpty(mainCharacter.Adjective))
                 mainCharacter.Adjective = MakeUpSomeAdjective();
@@ -35,14 +41,21 @@ namespace BardsTale.Brain
         }
 
         public string MakeUpSomeRandomName(){
-            var someNamesIKnow = new List<string>() { "Bob", "George", "Bill", "Charlie", "Lucy", "Alice", "Sarah", "Minnie", "Fluffy", "TinkleWinkle" };
-
-            return someNamesIKnow[randomiser.Next(someNamesIKnow.Count)];
+            return memory.Names.Value[randomiser.Next(memory.Names.Value.Count)];
         }
 
         public string MakeUpSomeAdjective()
         {
             return memory.Adjectives.Value[randomiser.Next(memory.Adjectives.Value.Count)];
         }
+
+        private string WhatDidHeLike(Character character)
+        {
+            if (!string.IsNullOrEmpty(character.FavouriteFood))
+                return "to eat " + character.FavouriteFood;
+
+            return character.FavouriteThing;
+        }
+
     }
 }

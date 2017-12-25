@@ -11,7 +11,7 @@ bacon
 bagels
 beans
 crackers
-banan
+banana
 butter
 beef
 BBQ

@@ -36,6 +36,7 @@ namespace BardsTale.Brain
             story.Content.Add("this is the fourth line of content");
             story.Content.Add("this is the fifth line of content");
             story.Content.Add("this is the sixth line of content");
+            story.Content.Add(imagination.GimmeAGoodEnding(story));
         }
 
         private string GetStoryTitle()

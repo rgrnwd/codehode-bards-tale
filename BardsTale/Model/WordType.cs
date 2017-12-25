@@ -8,6 +8,7 @@ namespace BardsTale.Model
         Verb,
         Noun,
         Adjective,
+        Name,
         Unknown
     }
 }
