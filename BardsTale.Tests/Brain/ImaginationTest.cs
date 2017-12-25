@@ -1,12 +1,14 @@
 ﻿using Xunit;
 using BardsTale.Brain;
 using System.Collections.Generic;
+using BardsTale.Model;
 
 namespace BardsTale.Tests.Brain
 {
     public class ImaginationTest
     {
-        Imagination imagination = new Imagination();
+        static Memory memory = new Memory(TestHelper.GetMainProjectDirectory());
+        Imagination imagination = new Imagination(memory);
 
         [Fact]
         public void MakeUpSomeRandomName_ReturnsValue()
@@ -29,6 +31,16 @@ namespace BardsTale.Tests.Brain
             }
 
             Assert.True(names.Count > 3);
+        }
+
+        [Fact]
+        public void MakeUpBeginning_ShouldStartWithOnceUponATime(){
+            StoryContext context = new StoryContext();
+            context.MainCharacter = new Character("baboon", "Bob", "silly", "fruit");
+            var result = imagination.MakeUpBeginning(context);
+
+            Assert.Contains("Once upon a time", result);
+
         }
     }
 }

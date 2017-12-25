@@ -7,16 +7,16 @@ namespace BardsTale
 {
     class Program
     {
-        static Bard bard = new Bard();
+        static Bard bard;
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Let me tell you a tale!");
-            Console.WriteLine("First of all, please give me a theme... ");
-            Console.WriteLine("(you can enter up to five words and I will do my best to tell you a tale relevant to those words)");
+            bard = new Bard(GetMainProjectDirectory());
+
+            TellThemWhatWereAllAbout();
             string theme = Console.ReadLine();
+
             var words = new WordProcessor(GetMainProjectDirectory()).GetWordsFromSentence(theme);
-            Console.WriteLine("OK let me think...");
 
             try
             {
@@ -35,6 +35,13 @@ namespace BardsTale
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private static void TellThemWhatWereAllAbout()
+        {
+            Console.WriteLine("Let me tell you a tale!");
+            Console.WriteLine("First of all, please give me a theme... ");
+            Console.WriteLine("(you can enter up to five words and I will do my best to tell you a tale relevant to those words)");
         }
 
         public static String GetMainProjectDirectory()

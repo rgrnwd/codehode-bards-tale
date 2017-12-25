@@ -9,10 +9,12 @@ namespace BardsTale.Brain
         private StoryContext story;
         private Imagination imagination;
         private MeaningParser meaningParser;
+        private Memory memory;
 
-        public Bard()
+        public Bard(string projectDirectory)
         {
-            imagination = new Imagination();
+            memory = new Memory(projectDirectory);
+            imagination = new Imagination(memory);
         }
 
         public StoryContext TellStory(List<Word> keywords)
@@ -20,24 +22,29 @@ namespace BardsTale.Brain
             meaningParser = new MeaningParser();
 
             story = meaningParser.WhatDoTheyWantAStoryAbout(keywords);
-            story.MainCharacter.Name = imagination.MakeUpSomeRandomName();
+            story.MainCharacter = imagination.FillInTheMissingDetails(story.MainCharacter);
             story.Title = GetStoryTitle();
-            story.Content.Add("this is the first line of content");
+            ComposeStory();
+            return story;
+        }
+
+        private void ComposeStory()
+        {
+            story.Content.Add(imagination.MakeUpBeginning(story));
             story.Content.Add("this is the second line of content");
             story.Content.Add("this is the third line of content");
             story.Content.Add("this is the fourth line of content");
             story.Content.Add("this is the fifth line of content");
             story.Content.Add("this is the sixth line of content");
-            return story;
         }
 
         private string GetStoryTitle()
         {
             string title = string.Format("A {0} {1} named {2}", story.MainCharacter.Adjective, story.MainCharacter.Type, story.MainCharacter.Name);
 
-            if (!string.IsNullOrEmpty(story.MainCharacter.Likes))
-                title += " who likes " + story.MainCharacter.Likes;
-            
+            if (!string.IsNullOrEmpty(story.MainCharacter.FavouriteFood))
+                title += " who likes " + story.MainCharacter.FavouriteFood;
+
             return title;
         }
     }

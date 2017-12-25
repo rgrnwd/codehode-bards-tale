@@ -14,7 +14,7 @@ namespace BardsTale.Brain
 
             StoryContext storyContext = new StoryContext();
             storyContext.MainCharacter = WhoIsTheMainCharacter(words);
-
+            storyContext.WordsToUse = words;
             return storyContext;
         }
 
@@ -27,6 +27,7 @@ namespace BardsTale.Brain
             if (animals.Count > 0)
             {
                 character.Type = animals[0].Value;
+                words.Remove(animals[0]);
             }
 
             var adjectives = words.FindAll(w => w.Type == WordType.Adjective);
@@ -34,14 +35,15 @@ namespace BardsTale.Brain
             if (adjectives.Count > 0)
             {
                 character.Adjective = adjectives[0].Value;
+                words.Remove(adjectives[0]);
             }
 
+            var foods = words.FindAll(w => w.Type == WordType.Food);
 
-            var nouns = words.FindAll(w => w.Type == WordType.Food);
-
-            if (nouns.Count > 0)
+            if (foods.Count > 0)
             {
-                character.Likes = nouns[0].Value;
+                character.FavouriteFood = foods[0].Value;
+                words.Remove(foods[0]);
             }
 
             return character;

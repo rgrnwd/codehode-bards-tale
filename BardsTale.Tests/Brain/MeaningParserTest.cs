@@ -44,7 +44,7 @@ namespace BardsTale.Tests.Brain
             var result = meaningParser.WhatDoTheyWantAStoryAbout(words);
 
             Assert.Equal("Zebra", result.MainCharacter.Type);
-            Assert.Equal("banana", result.MainCharacter.Likes);
+            Assert.Equal("banana", result.MainCharacter.FavouriteFood);
         }
     }
 }

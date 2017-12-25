@@ -7,6 +7,7 @@ namespace BardsTale.Model
     {
         public string Title { get; set; }
         public Character MainCharacter { get; set; }
+        public List<Word> WordsToUse { get; set; }
         public List<string> Content { get; set; }
 
         public StoryContext()

@@ -6,15 +6,18 @@ namespace BardsTale.Brain
 {
     public class WordProcessor
     {
-        private Memory dictionary;
+        private Memory memory;
+
+        public Memory Memory { get => memory; set => memory = value; }
 
         public WordProcessor(String projectDirectory)
         {
-            dictionary = new Memory(projectDirectory);
+            Memory = new Memory(projectDirectory);
         }
 
-        public Word Process(String word){
-            return dictionary.Lookup(word);
+        public Word Process(String word)
+        {
+            return Memory.Lookup(word);
         }
 
         public List<Word> GetWordsFromSentence(String sentence)
@@ -24,7 +27,7 @@ namespace BardsTale.Brain
 
             foreach (var particle in particles)
             {
-                words.Add(dictionary.Lookup(particle));
+                words.Add(Memory.Lookup(particle));
             }
 
             return words;

@@ -1,15 +1,10 @@
 ﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Resources/Words/Adjectives.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Model/Character.cs">
     <Files>
-      <File FileName="BardsTale.Tests/Brain/BardTest.cs" Line="21" Column="57" />
-      <File FileName="BardsTale/Brain/MeaningParser.cs" Line="40" Column="67" />
-      <File FileName="BardsTale.Tests/Brain/MeaningParserTest.cs" Line="43" Column="112" />
-      <File FileName="BardsTale.Tests/Brain/ImaginationTest.cs" Line="31" Column="40" />
-      <File FileName="BardsTale/Brain/Bard.cs" Line="40" Column="13" />
-      <File FileName="BardsTale/Resources/Words/Animals.txt" Line="38" Column="9" />
-      <File FileName="BardsTale/Resources/Words/Verbs.txt" Line="71" Column="5" />
-      <File FileName="BardsTale/Resources/Words/Foods.txt" Line="26" Column="8" />
-      <File FileName="BardsTale/Resources/Words/Adjectives.txt" Line="23" Column="9" />
+      <File FileName="BardsTale/Brain/Imagination.cs" Line="32" Column="39" />
+      <File FileName="BardsTale/Brain/Bard.cs" Line="25" Column="59" />
+      <File FileName="BardsTale/Brain/WordProcessor.cs" Line="9" Column="30" />
+      <File FileName="BardsTale/Model/Character.cs" Line="16" Column="90" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -11,7 +11,7 @@ namespace BardsTale.Tests.Brain
     {
         private List<Word> keywords;
 
-        Bard bard = new Bard();
+        Bard bard = new Bard(null);
 
         public BardTest(){
             keywords = new List<Word>();
@@ -39,7 +39,7 @@ namespace BardsTale.Tests.Brain
             Assert.NotNull(result.MainCharacter);
             Assert.Equal("Zebra", result.MainCharacter.Type);
             Assert.Equal("fat", result.MainCharacter.Adjective);
-            Assert.Equal("pizza", result.MainCharacter.Likes);
+            Assert.Equal("pizza", result.MainCharacter.FavouriteFood);
         }
 
         [Fact]
