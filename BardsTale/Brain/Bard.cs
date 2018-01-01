@@ -31,11 +31,9 @@ namespace BardsTale.Brain
         private void ComposeStory()
         {
             story.Content.Add(imagination.MakeUpBeginning(story));
-            story.Content.Add("this is the second line of content");
-            story.Content.Add("this is the third line of content");
-            story.Content.Add("this is the fourth line of content");
-            story.Content.Add("this is the fifth line of content");
-            story.Content.Add("this is the sixth line of content");
+
+            imagination.FillInTheStoryContent(story);
+
             story.Content.Add(imagination.GimmeAGoodEnding(story));
         }
 
