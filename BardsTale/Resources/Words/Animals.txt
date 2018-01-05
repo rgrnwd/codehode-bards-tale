@@ -23,6 +23,7 @@ Bear
 Beaver
 Beetle
 Binturong
+snowman
 Bird
 Birman
 Bison

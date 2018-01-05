@@ -22,38 +22,26 @@ namespace BardsTale.Brain
         {
             Character character = new Character();
 
-            var animals = words.FindAll(w => w.Type == WordType.Animal);
+            character.Type = FindWordOfType(words, WordType.Animal);
+            character.Adjective = FindWordOfType(words, WordType.Adjective);
+            character.FavouriteFood = FindWordOfType(words, WordType.Food);
+            character.Name = FindWordOfType(words, WordType.Name);
 
-            if (animals.Count > 0)
-            {
-                character.Type = animals[0].Value;
-                words.Remove(animals[0]);
-            }
-
-            var adjectives = words.FindAll(w => w.Type == WordType.Adjective);
-
-            if (adjectives.Count > 0)
-            {
-                character.Adjective = adjectives[0].Value;
-                words.Remove(adjectives[0]);
-            }
-
-            var foods = words.FindAll(w => w.Type == WordType.Food);
-
-            if (foods.Count > 0)
-            {
-                character.FavouriteFood = foods[0].Value;
-                words.Remove(foods[0]);
-            }
-
-            var names = words.FindAll(w => w.Type == WordType.Name);
-
-            if (names.Count > 0)
-            {
-                character.Name = names[0].Value;
-                words.Remove(names[0]);
-            }
             return character;
+        }
+
+        private string FindWordOfType(List<Word> words, WordType type){
+
+            string wordThatMeans = "";
+            var wordsOfType = words.FindAll(w => w.Type == type);
+
+            if (wordsOfType.Count > 0)
+            {
+                wordThatMeans = wordsOfType[0].Value;
+                words.Remove(wordsOfType[0]);
+            }
+
+            return wordThatMeans;
         }
     }
 }

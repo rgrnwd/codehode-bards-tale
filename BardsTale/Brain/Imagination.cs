@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using BardsTale.Model;
 
@@ -29,6 +28,9 @@ namespace BardsTale.Brain
         }
 
         public Character FillInTheMissingDetails(Character mainCharacter){
+            if (string.IsNullOrEmpty(mainCharacter.Type))
+                mainCharacter.Type = MakeUpSomeRandomCharacter();
+            
             if (string.IsNullOrEmpty(mainCharacter.Name))
                 mainCharacter.Name = MakeUpSomeRandomName();
 
@@ -72,8 +74,14 @@ namespace BardsTale.Brain
             return memory.PlotTwists.Value[randomiser.Next(memory.PlotTwists.Value.Count)];
         }
 
-        public string MakeUpSomeRandomName(){
+        public string MakeUpSomeRandomName()
+        {
             return memory.Names.Value[randomiser.Next(memory.Names.Value.Count)];
+        }
+
+        public string MakeUpSomeRandomCharacter()
+        {
+            return memory.Animals.Value[randomiser.Next(memory.Animals.Value.Count)];
         }
 
         public string MakeUpSomeAdjective()

@@ -7,6 +7,7 @@ namespace BardsTale.Model
         public string Name { get; set; }
         public string Adjective { get; set; }
         public string FavouriteFood { get; set; }
+        public string FavouriteColor { get; set; }
         public string FavouriteThing { get; set; }
 
         public Character()
