@@ -40,11 +40,11 @@ namespace BardsTale.Brain
             if (string.IsNullOrEmpty(mainCharacter.FavouriteFood))
                 mainCharacter.FavouriteThing = "to move it move it";
             
-            return mainCharacter;    
+            return mainCharacter;
         }
 
         public string RandomiseSentenceWithWordType(WordType type) {
-            var sentences = memory.PlotLines.Value.Where(s => s.Contains("["+type.ToString().ToUpper() +"]"));
+            var sentences = memory.PlotLines.Value.Where(s => s.Contains("[" + type.ToString() +"]"));
             return sentences.ElementAt(randomiser.Next(sentences.Count()));
         }
 

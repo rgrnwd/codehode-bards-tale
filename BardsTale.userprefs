@@ -1,10 +1,28 @@
 ﻿<Properties StartupConfiguration="{137AA262-09E4-4097-977D-BC3B3FFD1448}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Brain/Imagination.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BardsTale/Brain/Bard.cs">
     <Files>
-      <File FileName="BardsTale/Brain/Imagination.cs" Line="48" Column="13" />
-      <File FileName="BardsTale/Brain/Bard.cs" Line="49" Column="54" />
-      <File FileName="BardsTale/Resources/Sentences/Plot.txt" Line="20" Column="63" />
+      <File FileName="BardsTale/Brain/Imagination.cs" Line="36" Column="13" />
+      <File FileName="BardsTale/Resources/Sentences/Plot.txt" Line="1" Column="1" />
+      <File FileName="BardsTale.Tests/Brain/BardTest.cs" Line="56" Column="9" />
+      <File FileName="BardsTale/Brain/Bard.cs" Line="67" Column="96" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="BardsTale" expanded="True">
+            <Node name="BardsTale.Tests" expanded="True">
+              <Node name="BardsTale" expanded="True">
+                <Node name="Tests" expanded="True">
+                  <Node name="Brain" expanded="True">
+                    <Node name="BardTest" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.BardsTale PreferredExecutionTarget="MonoDevelop.Default" />
