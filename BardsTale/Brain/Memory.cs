@@ -17,6 +17,7 @@ namespace BardsTale.Brain
         private const string FOODS_DICTIONARY = "Foods.txt";
         private const string NAMES_DICTIONARY = "Names.txt";
 
+        private const string PLOT_LINES = "Plot.txt";
         private const string PLOT_TWISTS = "PlotTwists.txt";
 
         private Lazy<List<String>> animals;
@@ -25,6 +26,7 @@ namespace BardsTale.Brain
         private Lazy<List<String>> nouns;
         private Lazy<List<String>> adjectives;
         private Lazy<List<String>> names;
+        private Lazy<List<String>> plotLines;
         private Lazy<List<String>> plotTwists;
 
         public Lazy<List<string>> Adjectives { get => adjectives; set => adjectives = value; }
@@ -33,6 +35,7 @@ namespace BardsTale.Brain
         public Lazy<List<string>> Verbs { get => verbs; set => verbs = value; }
         public Lazy<List<string>> Nouns { get => nouns; set => nouns = value; }
         public Lazy<List<string>> Names { get => names; set => names = value; }
+        public Lazy<List<string>> PlotLines { get => plotLines; set => plotLines = value; }
         public Lazy<List<string>> PlotTwists { get => plotTwists; set => plotTwists = value; }
 
         public Memory(string projectDirectory)
@@ -46,6 +49,7 @@ namespace BardsTale.Brain
             Names = new Lazy<List<string>>(() => LoadWordsFromDictionary(Path.Combine(knownWords, NAMES_DICTIONARY)));
 
             var knownSentences = Path.Combine(projectDirectory, "Resources/Sentences");
+            PlotLines = new Lazy<List<string>>(() => LoadSentencesFromFile(Path.Combine(knownSentences, PLOT_LINES)));
             PlotTwists = new Lazy<List<string>>(() => LoadSentencesFromFile(Path.Combine(knownSentences, PLOT_TWISTS)));
         }
 

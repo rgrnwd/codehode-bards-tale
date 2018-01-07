@@ -16,4 +16,7 @@
   <ItemGroup>
     <Compile Remove="Brain\SentenceGenerator.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Sentences\PlotTwists %28copy%29.txt" />
+  </ItemGroup>
 </Project>

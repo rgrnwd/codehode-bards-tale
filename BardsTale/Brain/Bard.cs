@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using BardsTale.Model;
 
 namespace BardsTale.Brain
@@ -32,9 +33,29 @@ namespace BardsTale.Brain
         {
             story.Content.Add(imagination.MakeUpBeginning(story));
 
-            imagination.FillInTheStoryContent(story);
+            while (story.WordsToUse.Count > 0)
+            {
+                Word word = story.WordsToUse.First();
+                String sentence = imagination.RandomiseSentenceWithWordType(word.Type);
+                story.Content.Add(FormatContextIntoSentence(sentence, word));
+                story.WordsToUse.RemoveAt(0);
+            }
 
             story.Content.Add(imagination.GimmeAGoodEnding(story));
+        }
+
+        private string FormatContextIntoSentence(string sentence, Word word)
+        {
+            sentence = sentence.Replace("[MAINCHAR]", story.MainCharacter.Name);
+            sentence = sentence.Replace("[NOUN]", word.Type == WordType.Noun ? word.Value : "coin");
+            sentence = sentence.Replace("[FOOD]", word.Type == WordType.Food ? word.Value : "banana");
+            sentence = sentence.Replace("[ANIMAL]", word.Type == WordType.Animal ? word.Value : imagination.MakeUpSomeRandomCharacter());
+            sentence = sentence.Replace("[ADJ]", word.Type == WordType.Adjective ? word.Value : "chubby");
+            sentence = sentence.Replace("[VERB]", word.Type == WordType.Verb ? word.Value : "jump");
+            sentence = sentence.Replace("[UNKNOWN]", word.Value);
+            sentence = sentence.Replace("[NAME]", imagination.MakeUpSomeRandomName());
+            sentence = sentence.Replace("[PLOTTWIST]", imagination.MakeUpSomePlotTwist());
+            return sentence;
         }
 
         private string GetStoryTitle()
