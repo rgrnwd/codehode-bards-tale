@@ -40,7 +40,20 @@ namespace BardsTale.Tests.Brain
             var result = imagination.MakeUpBeginning(context);
 
             Assert.Contains("Once upon a time", result);
+        }
 
+        [Theory]
+        [InlineData(WordType.Noun)]
+        [InlineData(WordType.Animal)]
+        [InlineData(WordType.Food)]
+        [InlineData(WordType.Adjective)]
+        [InlineData(WordType.Verb)]
+        [InlineData(WordType.Name)]
+        [InlineData(WordType.Unknown)]
+        public void RandomiseSentenceWithWordType_ShouldFindSuitableSentenceInDictionary(WordType wordType)
+        {
+            var result = imagination.RandomiseSentenceWithWordType(wordType);
+            Assert.Contains("[" + wordType.ToString() + "]", result);
         }
     }
 }

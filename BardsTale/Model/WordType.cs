@@ -9,6 +9,9 @@ namespace BardsTale.Model
         Noun,
         Adjective,
         Name,
+        Color,
+        Location,
+        Thing,
         Unknown
     }
 }

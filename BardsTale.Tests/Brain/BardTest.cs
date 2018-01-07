@@ -72,6 +72,12 @@ namespace BardsTale.Tests.Brain
         [InlineData("[Adjective]", "BLABLA", WordType.Unknown, "chubby")]
         [InlineData("[Verb]", "play", WordType.Verb, "play")]
         [InlineData("[Verb]", "BLABLA", WordType.Unknown, "jump")]
+        [InlineData("[Color]", "blue", WordType.Color, "blue")]
+        [InlineData("[Color]", "BLABLA", WordType.Unknown, "red")]
+        [InlineData("[Location]", "forest", WordType.Location, "forest")]
+        [InlineData("[Location]", "BLABLA", WordType.Unknown, "beach")]
+        [InlineData("[Thing]", "seashells", WordType.Thing, "seashells")]
+        [InlineData("[Thing]", "BLABLA", WordType.Unknown, "stones")]
         [InlineData("[Unknown]", "BLABLA", WordType.Unknown, "BLABLA")]
         public void FormatContextIntoSentence_FormatsWordIntoSentence(string sentenceParticle, string word, WordType type, string expectedFormat)
         {

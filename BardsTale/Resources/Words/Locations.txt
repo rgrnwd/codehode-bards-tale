@@ -1,0 +1,15 @@
+﻿beach
+forest
+mountains
+city
+village
+volcano
+Himalayas
+office
+shopping centre
+mall
+field
+rice paddy
+swamp
+lake
+seashore
