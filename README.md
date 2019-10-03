@@ -2,9 +2,9 @@
 A story telling application
 
 ## Building the application
-You'll need to have dotnet core installed on your machine. 
-You can find the SDK at: `https://download.microsoft.com/download/2/9/3/293BC432-348C-4D1C-B628-5AC8AB7FA162/dotnet-sdk-2.1.3-osx-gs-x64.pkg`
-Once that's installed, you can try to run the command `dotnet --version` in your terminal.
+You'll need to have dotnet core 2.1 installed on your machine.
+You can find the SDK at: `https://dotnet.microsoft.com/download/dotnet-core`
+Verify the installation with the command `dotnet --version` in a new terminal window (if it doesn't work, add to your bashrc/zshrc).
 CD into the project folder `BardsTale`
 Run the command `dotnet build`
 
